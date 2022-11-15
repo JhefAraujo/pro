@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+
+:root {
+    --theme-color-1: #0084ff;
+    --theme-color-2: #1c53df;
+    --bg-color: #000422;
+    --white-shade-1: #ffffff;
+    --white-shade-2: #d0d0d0;
+    --white-rgba: rgba(255, 255, 255, 0.12);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background: rgb(0,4,34);
+    background: linear-gradient(45deg, rgba(0,4,34,1) 0%, rgba(9,9,121,1) 31%, rgba(0,94,113,1) 86%);
+    background-size: cover;
+    overflow: hidden;
+}
+
+.container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 45%;
+    left: 50%;
+    perspective: 800px;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    height: 280px;
+    width: 280px;
+    background: radial-gradient(var(--theme-color-1), var(--theme-color-2));
+    border-radius: 50%;
+    top: 70%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    animation: flutuacao2 10s
+    ease-in-out infinite;
+}
+
+.card {
+    height: 380px;
+    width: 350px;
+    border-radius: 15px;
+    position: relative;
+    animation: flutuacao 10s
+    ease-in-out infinite;
+}
+
+@media (max-width: 850px) {
+    .card {
+        height: 250px;
+    }
+    .paiaviso {
+        height: 100px;
+    }
+    .planeta {
+        display: none;
+    }
+    .planetamobile {
+        animation: flutuacao4 5s
+        ease-in-out infinite;
+    }
+    .paiplan {
+        position: absolute;
+        width: 500px;
+        top: 47.3%;
+        left: 65%;
+    }
+}
+
+@media (min-width: 851px) {
+    .planetamobile {
+        display: none;
+    }
+    .paiplan {
+        position: absolute;
+        width: 500px;
+        top: 28.3%;
+        left: 65%;
+    }
+}
+
+.front, .back {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    border: 2px solid var(--white-rgba);
+    border-radius: 15px;
+    background-color: var(--white-rgba);
+    backdrop-filter: blur(8px);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: 1s;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.123);
+}
+
+.front {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.front img {
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    border: 2px solid var(--white-shade-2);
+    background-color: black;
+}
+
+.details {
+    text-align: center;
+}
+
+h2 {
+    font-size: 17px;
+    color: var(--white-shade-1);
+    margin-top: 35px;
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+span {
+    font-size: 14px;
+    color: var(--white-shade-2);
+    letter-spacing: 3.5px;
+}
+
+.back {
+    justify-content: space-around;
+    align-items: center;
+    transform: rotateY(180deg);
+}
+
+.icon {
+    display: grid ;
+    place-items: center;
+    width: 65px;
+    height: 65px;
+    background-color: var(--white-rgba);
+    border-radius: 8px;
+    text-decoration: none;
+    justify-content: center;
+    font-size: 25px;
+    color: var(--white-shade-1);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.151);
+}
+
+.icon:hover {
+    transform: translateY(-10px);
+    background-color: var(--white-shade-2);
+    color: var(--theme-color-1);
+    transition-duration: 1s;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.582);
+}
+
+.card:hover .back {
+    transform: rotateY(0deg);
+}
+
+.card:hover .front {
+    transform: rotateY(-180deg);
+}
+
+.card:focus .back {
+    transform: rotateY(0deg);
+}
+
+.card:focus .front {
+    transform: rotateY(-180deg);
+}
+
+.planeta {
+    animation: flutuacao4 5s
+    ease-in-out infinite;
+}
+
+.paiaviso {
+    width: 200px;
+    height: 200px;
+    background-color: var(--white-rgba);
+    border: 2px solid var(--white-rgba);
+    margin: 30px;
+    border-radius: 16px;
+    animation: flutuacao3 10s
+    ease-in-out infinite;
+}
+
+.aviso {
+    padding-top: 60px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    color: var(--white-shade-2);
+}
+
+@keyframes flutuacao {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+@keyframes flutuacao2 {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(30px);
+    }
+}
+
+@keyframes flutuacao3 {
+    0% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(5px);
+    }
+    50% {
+        transform: translateY(30px);
+    }
+}
+
+@keyframes flutuacao4 {
+    0%, 100% {
+        transform: translateY(60px);
+    }
+    50% {
+        transform: translateY(30px);
+    }
+}
