@@ -102,6 +102,10 @@ body {
         animation: flutuacao3 10s
         ease-in-out infinite;
     }
+    .aviso {
+        position: relative;
+        top: 20%;
+    }
 }
 
 @media (min-width: 851px) {
@@ -130,6 +134,19 @@ body {
         border-radius: 16px;
         animation: flutuacao3 10s
         ease-in-out infinite;
+    }
+
+    .aviso {
+        position: relative;
+        top: 35%;
+        transform: translateY(-50%);
+        padding-top: 60px;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-align: center;
+        color: var(--white-shade-2);
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -239,7 +256,6 @@ span {
 
 .aviso {
     position: relative;
-    top: 20%;
     transform: translateY(-50%);
     padding-top: 60px;
     padding-left: 15px;
