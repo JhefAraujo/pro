@@ -52,6 +52,7 @@ body {
 @media (max-width: 850px) {
     .card {
         height: 250px;
+        width: 300px;
     }
     html, body {
         overflow: hidden;
@@ -69,28 +70,27 @@ body {
         display: none;
     }
     .planetamobile {
-        overflow: hidden;
         position: relative;
         animation: flutuacao4 5s
         ease-in-out infinite;
     }
     .paiplan {
-        width: 500px;
-        top: 47.3%;
-        left: 55%;
-        overflow: hidden;
+        height: 300px;
+        top: 63.3%;
+        left: 45%;
         position: fixed;
+        display: block;
     }
     .container {
         position: absolute;
         transform: translate(-50%, -50%);
-        top: 52%;
+        top: 47%;
         left: 50%;
         perspective: 800px;
     }
     .paiaviso {
         width: 200px;
-        height: 150px;
+        height: 100px;
         background-color: var(--white-rgba);
         border: 2px solid var(--white-rgba);
         margin: 30px;
@@ -228,12 +228,22 @@ span {
     ease-in-out infinite;
 }
 
+.paiaviso {
+    position: absolute;
+    top: -3%;
+}
+
 .aviso {
+    position: relative;
+    top: 20%;
+    transform: translateY(-50%);
     padding-top: 60px;
     padding-left: 15px;
     padding-right: 15px;
     text-align: center;
     color: var(--white-shade-2);
+    align-items: center;
+    justify-content: center;
 }
 
 @keyframes flutuacao {
