@@ -8,3 +8,15 @@ body {
     width: 100vw;
     overflow: hidden;
 }
+
+@media (max-width: 680px) {
+    .pc3d {
+        display: none;
+    }
+}
+
+@media (min-width: 681px) {
+    .mo3d {
+        display: none;
+    }
+}
